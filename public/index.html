@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cyrus Xue: Physics, Research, Music, Animation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+:root{
+  --bg:#f4f1ea; --bg2:#ebe6db; --card:#faf8f4; --ink:#18241f; --soft:#5d6a63; --line:#d9d4c9;
+  --forest:#2a4a45; --on-forest:#f7f4ec; --accent:#e0603a; --accent-text:#b4462a; --shadow:#18241f;
+  --head:"Newsreader",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#131d19; --bg2:#1b2a25; --card:#1c2b26; --ink:#f1ede4; --soft:#a9b4ab; --line:#33473f; --forest:#3b6a62; --on-forest:#f7f4ec; --accent:#ef7a55; --accent-text:#f08b69; --shadow:#000;}}
+:root[data-theme="dark"]{--bg:#131d19; --bg2:#1b2a25; --card:#1c2b26; --ink:#f1ede4; --soft:#a9b4ab; --line:#33473f; --forest:#3b6a62; --on-forest:#f7f4ec; --accent:#ef7a55; --accent-text:#f08b69; --shadow:#000;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:var(--accent-text);text-underline-offset:3px} :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+img,video{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--head);line-height:1.08;margin:0;font-weight:500}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.25rem}
+
+header{background:var(--bg)}
+.brand{padding-top:2.4rem;padding-bottom:2.4rem;display:flex;align-items:center;gap:1rem}
+.mark{display:flex;gap:5px;align-items:center;flex:none}
+.mark i{display:block;width:12px;border-radius:6px;background:var(--forest)}
+.mark i:nth-child(1){height:22px}.mark i:nth-child(2){height:34px;background:var(--accent)}.mark i:nth-child(3){height:28px}
+.brand h1{font-size:clamp(2.2rem,7vw,3.8rem);letter-spacing:-.02em}
+.brand p{margin:.2rem 0 0;color:var(--soft);font-size:1.05rem}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg)}
+nav .wrap{padding-bottom:.9rem}
+[role=tablist]{display:flex;border:1.5px solid var(--ink);background:var(--card);overflow-x:auto;scrollbar-width:none;box-shadow:6px 6px 0 var(--shadow)}
+[role=tab]{flex:1 0 auto;font:600 .9rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--card);border:0;border-right:1.5px solid var(--ink);padding:1.05rem 1.4rem;cursor:pointer;white-space:nowrap;position:relative}
+[role=tab]:last-child{border-right:0}
+[role=tab]:hover{background:var(--bg2)}
+[role=tab][aria-selected=true]{background:var(--forest);color:var(--on-forest)}
+[role=tab][aria-selected=true]::after{content:"";position:absolute;left:1rem;right:1rem;bottom:6px;height:3px;background:var(--accent)}
+
+main.wrap{padding-top:3.2rem;padding-bottom:4rem}
+[role=tabpanel][hidden]{display:none}
+.lede{font-size:1.2rem;max-width:40rem;margin:.8rem 0 2.2rem;color:var(--soft)}
+h2{font-size:clamp(2rem,5vw,3rem);letter-spacing:-.02em}
+h3{font-size:1.45rem}
+.stack>*+*{margin-top:3.4rem}
+.grid{display:grid;gap:1.4rem}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,13.5rem),1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr))}
+.card{background:var(--card);border:1.5px solid var(--ink);padding:1.3rem;box-shadow:5px 5px 0 var(--shadow)}
+.card ul{padding-left:1.2rem;margin:.6rem 0 0}
+.card li+li{margin-top:.3rem}
+.tag{font:600 .9rem var(--mono);letter-spacing:.06em;color:var(--accent-text)}
+
+.day{display:grid;gap:1.5rem;grid-template-columns:minmax(0,1fr);padding:1.8rem 0;border-top:1.5px solid var(--line)}
+@media(min-width:56rem){.day{grid-template-columns:15rem minmax(0,1fr);gap:2.5rem}}
+.day .tag{font:500 3rem/1 var(--head);letter-spacing:-.02em;display:block;color:var(--accent-text)}
+details{background:var(--card);border:1.5px solid var(--line);padding:.9rem 1.1rem;margin-top:.9rem}
+summary{cursor:pointer;font-weight:500}
+summary::marker{color:var(--accent)}
+details[open]{border-color:var(--ink)}
+.ans{margin:.7rem 0 0;padding:.65rem .9rem;background:var(--bg2);border-left:4px solid var(--accent);font-size:1rem}
+.eq{font-family:var(--mono);font-size:.92em;background:var(--bg2);padding:.1rem .45rem;white-space:nowrap}
+
+.jump{display:flex;flex-wrap:wrap;gap:.6rem;margin:-1rem 0 2.5rem}
+.jump a{font:600 .8rem var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:var(--card);border:1.5px solid var(--ink);padding:.45rem .9rem}
+.jump a:hover{background:var(--forest);color:var(--on-forest)}
+.sec{scroll-margin-top:6rem}
+.sec>.lede{margin-bottom:1.4rem}
+.embed{display:block;width:100%;border:1.5px solid var(--ink);background:#fff;box-shadow:8px 8px 0 var(--shadow)}
+.embed.tall{height:clamp(34rem,85vh,52rem)}
+.embed.portrait{height:clamp(32rem,85vh,54rem)}
+.embed.slides{height:clamp(24rem,70vh,42rem)}
+.links{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.6rem 0 0}
+.btn{display:inline-block;font:600 .85rem var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--forest);color:var(--on-forest);padding:.8rem 1.2rem;text-decoration:none;border:1.5px solid var(--ink)}
+.btn:hover{background:var(--ink)}
+.btn.alt{background:var(--card);color:var(--ink)}
+.btn.alt:hover{background:var(--bg2)}
+.seg{display:flex;flex-wrap:wrap;gap:0;margin-bottom:1.4rem;border:1.5px solid var(--ink);background:var(--card);width:fit-content;max-width:100%}
+.daybtn{font:600 .85rem var(--mono);letter-spacing:.04em;cursor:pointer;color:var(--ink);background:var(--card);border:0;border-right:1.5px solid var(--ink);padding:.75rem 1.1rem;text-align:left}
+.daybtn:last-child{border-right:0}
+.daybtn[aria-pressed=true]{background:var(--forest);color:var(--on-forest)}
+
+table{width:100%;border-collapse:collapse;font-size:1rem;min-width:44rem}
+th,td{text-align:left;padding:.75rem .85rem;border-bottom:1px solid var(--line)}
+th{font:600 .8rem var(--mono);letter-spacing:.05em;text-transform:uppercase;background:var(--bg2)}
+tr.hl td{background:#fbe6dd;font-weight:600}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) tr.hl td{background:#3a2a24}}
+.scroll{overflow-x:auto;border:1.5px solid var(--ink);background:var(--card);box-shadow:5px 5px 0 var(--shadow)}
+figure{margin:0}
+figure img{width:100%;height:100%;object-fit:cover;max-height:22rem;border:1.5px solid var(--ink);box-shadow:5px 5px 0 var(--shadow)}
+figcaption{font:400 .85rem var(--mono);color:var(--soft);margin-top:.9rem}
+.pair{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr))}
+.big{font:500 clamp(2.4rem,6vw,3.5rem)/1 var(--head);color:var(--accent-text);letter-spacing:-.02em}
+.src li{overflow-wrap:anywhere;font-size:.98rem}
+
+.player{aspect-ratio:16/9;width:100%;border:1.5px solid var(--ink);background:var(--bg2);box-shadow:8px 8px 0 var(--shadow)}
+
+.art{columns:16rem;column-gap:1.4rem}
+.art button{display:block;width:100%;margin:0 0 1.4rem;padding:0;border:1.5px solid var(--ink);overflow:hidden;cursor:zoom-in;background:var(--card);break-inside:avoid;box-shadow:5px 5px 0 var(--shadow)}
+.art img{width:100%;height:auto}
+.clips video{width:100%;aspect-ratio:16/9;background:#fff;border:1.5px solid var(--ink);box-shadow:5px 5px 0 var(--shadow)}
+.clips p{margin:.9rem 0 0;font:600 .85rem var(--mono);letter-spacing:.05em;text-transform:uppercase}
+dialog{border:0;padding:0;background:transparent;max-width:min(94vw,64rem);max-height:94vh;overflow:visible}
+dialog::backdrop{background:rgba(14,22,18,.86)}
+dialog img{max-height:88vh;width:auto;margin:auto;border:1.5px solid var(--ink)}
+dialog button{position:absolute;top:-2.8rem;right:0;font:600 .8rem var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--card);color:var(--ink);border:1.5px solid var(--ink);padding:.45rem .9rem;cursor:pointer}
+footer{border-top:1.5px solid var(--line);padding:1.6rem 0 2.2rem;color:var(--soft);font:400 .85rem var(--mono)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap brand">
+    <div class="mark" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div><h1>Cyrus Xue</h1>
+    <p>Physics, spacecraft research, music and hand-drawn animation.</p></div>
+  </div>
+</header>
+<nav aria-label="Sections"><div class="wrap">
+  <div role="tablist">
+    <button role="tab" id="t-physics" aria-controls="p-physics" aria-selected="true">Physics</button>
+    <button role="tab" id="t-research" aria-controls="p-research" aria-selected="false" tabindex="-1">Research</button>
+    <button role="tab" id="t-music" aria-controls="p-music" aria-selected="false" tabindex="-1">Music</button>
+    <button role="tab" id="t-animation" aria-controls="p-animation" aria-selected="false" tabindex="-1">Animation</button>
+  </div>
+</div></nav>
+
+<main class="wrap">
+
+<!-- PHYSICS -->
+<section role="tabpanel" id="p-physics" aria-labelledby="t-physics">
+  <h2>Physics</h2>
+  <p class="lede">An interactive simulator, a homework set from the Saratoga High School Physics Club, and the full slide decks from the 2026 summer camp.</p>
+  <p class="jump"><a href="#motionlab">MotionLab simulator</a> <a href="#shs-club">SHS Physics Club</a> <a href="#summer-camp">Physics summer camp</a></p>
+
+  <div class="stack">
+  <section class="sec" id="motionlab" aria-labelledby="h-motionlab">
+    <h2 id="h-motionlab">MotionLab</h2>
+    <p class="lede">Run guided AP Physics 1 experiments or build your own system in the sandbox, with live forces, values and graphs.</p>
+    <iframe class="embed tall" title="MotionLab interactive AP Physics simulator" src="https://physicslab.cyrusxue9t9.com" loading="lazy" allow="fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <p class="links"><a class="btn" href="https://physicslab.cyrusxue9t9.com" target="_blank" rel="noopener">Open MotionLab in a new tab</a></p>
+  </section>
+
+  <section class="sec" id="shs-club" aria-labelledby="h-club">
+    <h2 id="h-club">SHS Physics Club</h2>
+    <p class="lede">Saratoga High School Physics Club homework: Day 3, Dynamics part 2. Seven multiple-choice questions on elevators, friction, springs and pulleys.</p>
+    <iframe class="embed portrait" title="Day 3 Dynamics homework (PDF)" src="docs/Day3-Dynamics-HW.pdf#toolbar=1&navpanes=0"></iframe>
+    <p class="links"><a class="btn" href="docs/Day3-Dynamics-HW.pdf" target="_blank" rel="noopener">Open PDF</a> <a class="btn alt" href="docs/Day3-Dynamics-HW.docx" download>Download Word file</a></p>
+  </section>
+
+  <section class="sec" id="summer-camp" aria-labelledby="h-camp">
+    <h2 id="h-camp">Physics summer camp</h2>
+    <p class="lede">SHS Physics Club Summer Camp 2026, a virtual Physics + AP Physics 1 camp. Pick a day to read its slides.</p>
+    <div class="seg" role="group" aria-label="Choose a camp day">
+      <button type="button" class="daybtn" aria-pressed="true" data-pdf="docs/Day3-Slides.pdf" data-pptx="docs/Day3-Slides.pptx">Day 3: Dynamics pt. 2</button>
+      <button type="button" class="daybtn" aria-pressed="false" data-pdf="docs/Day4-Slides.pdf" data-pptx="docs/Day4-Slides.pptx">Day 4: Circular motion and gravitation</button>
+      <button type="button" class="daybtn" aria-pressed="false" data-pdf="docs/Day13-Slides.pdf" data-pptx="docs/Day13-Slides.pptx">Day 13: Pressure, density, buoyancy</button>
+    </div>
+    <iframe class="embed slides" id="campframe" title="Summer camp slides (PDF)" src="docs/Day3-Slides.pdf#toolbar=1&navpanes=0"></iframe>
+    <p class="links"><a class="btn" id="camppdf" href="docs/Day3-Slides.pdf" target="_blank" rel="noopener">Open PDF</a> <a class="btn alt" id="camppptx" href="docs/Day3-Slides.pptx" download>Download PowerPoint</a></p>
+
+    <h3 style="margin-top:3rem">Lesson notes</h3>
+<article class="day">
+    <div><span class="tag">Day 3</span><h3>Dynamics, part 2</h3><p>Elevators, friction, springs and pulleys.</p></div>
+    <div>
+      <div class="grid g3">
+        <div class="card"><h3>Elevators</h3><ul><li>Net force and acceleration point the same way</li><li>Normal force vs. gravity</li><li>Free fall and "weightlessness"</li></ul></div>
+        <div class="card"><h3>Friction</h3><ul><li>Kinetic: <span class="eq">F = μₖN</span></li><li>Static: <span class="eq">F ≤ μₛN</span></li><li>Why pulling beats pushing</li></ul></div>
+        <div class="card"><h3>Springs and pulleys</h3><ul><li>Restoring force <span class="eq">F = −kx</span></li><li>Tension and Atwood machines</li><li>What a fixed pulley does</li></ul></div>
+      </div>
+      <details><summary>A 5 kg box rides in an elevator moving down and slowing at 5 m/s². What normal force does it feel? (g = 10 m/s²)</summary><p class="ans">75 N. Moving down while slowing means the acceleration points up: N − mg = ma, so N = 5(10 + 5) = 75 N.</p></details>
+      <details><summary>A 15 kg crate sits on a truck bed (μₛ = 0.7). The truck accelerates at 7 m/s². Does the crate slide off?</summary><p class="ans">Yes. Maximum static friction is 0.7 × 15 × 9.8 = 102.9 N, but the crate needs 15 × 7 = 105 N to keep up.</p></details>
+    </div>
+  </article>
+<article class="day">
+    <div><span class="tag">Day 4</span><h3>Circular motion and gravitation</h3><p>Centripetal force, banked turns and orbits.</p></div>
+    <div>
+      <div class="grid g3">
+        <div class="card"><h3>Centripetal acceleration</h3><ul><li><span class="eq">a = v²/r</span>, always toward the center</li><li>Velocity and acceleration are perpendicular</li></ul></div>
+        <div class="card"><h3>Centripetal force</h3><ul><li><span class="eq">F = mv²/r</span></li><li>Not a new force: it is the net force toward the center</li><li>Never drawn on a free-body diagram</li></ul></div>
+        <div class="card"><h3>Gravitation</h3><ul><li>Universal law of gravitation</li><li>Orbits and orbital speed derivation</li></ul></div>
+      </div>
+      <details><summary>A 1200 kg car turns with radius 50 m on a road with μₛ = 0.6. What is the maximum speed without slipping?</summary><p class="ans">17.15 m/s. Friction supplies the centripetal force, so v = √(μgr). On a slick road with μ = 0.4 at that speed, the minimum safe radius is 75 m.</p></details>
+      <details><summary>A 2 kg block circles on a table at radius 0.8 m, held by a string to a 0.5 kg block hanging below. Find the tension, speed and period.</summary><p class="ans">Tension 4.9 N (it holds up the hanging block). Speed 1.4 m/s. Period 3.59 s. If the string is cut, the table block flies off in a straight tangent line and the hanging block falls freely.</p></details>
+    </div>
+  </article>
+<article class="day">
+    <div><span class="tag">Day 13</span><h3>Pressure, density, buoyancy</h3><p>From a block's mass to why ships float.</p></div>
+    <div>
+      <div class="grid g3">
+        <div class="card"><h3>Density</h3><ul><li><span class="eq">ρ = m/V</span></li><li>Specific gravity has nothing to do with gravity</li><li>Average density is total mass over total volume</li></ul></div>
+        <div class="card"><h3>Pressure</h3><ul><li><span class="eq">P = F/A</span>, measured in pascals</li><li>Water and air pressure</li><li>Absolute = gauge + atmospheric</li></ul></div>
+        <div class="card"><h3>Buoyancy</h3><ul><li>Buoyant force equals the weight of displaced water</li><li>Floating, sinking and neutral buoyancy</li></ul></div>
+      </div>
+      <details><summary>A metal block has a mass of 18 kg and a volume of 0.006 m³. What is its density?</summary><p class="ans">3000 kg/m³.</p></details>
+      <details><summary>An ice cube floats in a full glass of water. When it melts completely, what happens to the water level?</summary><p class="ans">Try it before you open the slides. Options: it rises, it falls, it stays the same, or the glass overflows.</p></details>
+    </div>
+  </article>
+  </section>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section role="tabpanel" id="p-research" aria-labelledby="t-research" hidden>
+  <div class="stack">
+    <div>
+      <h2>Nuclear fusion propulsion</h2>
+      <p class="lede">Presented for the CCIR Spacecraft Engineering Course on October 10, 2024. The question: fusion releases enormous energy, so why can't we fly on it yet, and what would have to change?</p>
+    </div>
+
+    <div>
+      <h3>How fusion compares with other engines</h3>
+      <p>Fusion's specific impulse dwarfs every other option, but its temperature and unknown cost keep it on the research frontier.</p>
+      <div class="scroll" style="margin-top:1rem"><table>
+        <thead><tr><th>Average values</th><th>Specific impulse (s)</th><th>Thrust control</th><th>Heat (°F)</th><th>Weight vs. large rocket</th><th>Cost (large rocket)</th></tr></thead>
+        <tbody>
+          <tr><td>Liquid chemical</td><td>450</td><td>Excellent</td><td>4,000–5,000</td><td>High (90–95%)</td><td>$10 million</td></tr>
+          <tr><td>Solid chemical</td><td>250</td><td>Limited</td><td>~5,000</td><td>High (80–90%)</td><td>$5 million</td></tr>
+          <tr><td>Electric</td><td>10,000</td><td>Excellent</td><td>8,500</td><td>Low (5–10%)</td><td>$40 million</td></tr>
+          <tr><td>Fission</td><td>1,500</td><td>Good</td><td>3,140</td><td>Low (10–20%)</td><td>$5 billion</td></tr>
+          <tr class="hl"><td>Fusion</td><td>130,000</td><td>Limited</td><td>200,000,000</td><td>Low (20–30%)</td><td>Unknown</td></tr>
+        </tbody></table></div>
+      <figcaption style="margin-top:.5rem;font-size:.95rem;color:var(--soft)">Source: NASA and other online science databases.</figcaption>
+    </div>
+
+    <div class="grid g2">
+      <div class="card"><h3>Fission</h3><p>A large, heavy nucleus splits into two smaller ones. It releases a lot of energy at relatively low temperature and moderate pressure, started by neutron collisions.</p></div>
+      <div class="card"><h3>Fusion</h3><p>Two small nuclei join into one heavier nucleus and release much more energy. It needs extreme temperature to overcome electrostatic repulsion, and extreme pressure.</p></div>
+    </div>
+
+    <div class="pair" style="align-items:center">
+      <div><h3>The physics is E = mc²</h3><p>Mass converts to energy through the speed of light squared, about 3 × 10⁸ m/s. Because that factor is so large, a small amount of fusion fuel yields a huge amount of energy.</p></div>
+      <div><h3>How a fusion rocket could work</h3><p>A reactor smashes atoms together into a plasma. A turbo pump creates the vacuum, while a driver coil and flux shaper create and control the magnetic field. The plasma is heated to about 100 million °C and expelled to make thrust.</p></div>
+    </div>
+    <figure><img src="assets/rocket.jpg" alt="NASA fusion driven rocket diagram showing the turbo-molecular pump, driver coil and flux shaper" style="object-fit:contain;background:#fff;max-height:26rem"><figcaption>Fusion-driven rocket concept: formation section, driver coil and flux shaper.</figcaption></figure>
+
+    <div>
+      <h3>Research frontier</h3>
+      <div class="grid g3" style="margin-top:1rem">
+        <div class="card"><h3>Fusion driven rocket</h3><p>Releases energy straight into the propellant. Pulsar Fusion is trying to build one.</p></div>
+        <div class="card"><h3>ITER, France</h3><p>An international facility aiming to produce 500 megawatts from fusion.</p></div>
+        <div class="card"><h3>National Ignition Facility</h3><p>Produced 3.15 MJ from 2.05 MJ of laser energy, the first break-even result.</p></div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Why it is hard on a spacecraft</h3>
+      <div class="grid g3" style="margin-top:1rem">
+        <div class="card"><div class="big">100M °C</div><p>Temperature needed, about 6 times the sun's core.</p></div>
+        <div class="card"><div class="big">10⁸+ atm</div><p>Pressure needed: hundreds of billions of atmospheres.</p></div>
+        <div class="card"><div class="big">Control</div><p>Plasma behaves in ways we don't fully understand at these conditions, so confining it is hard.</p></div>
+      </div>
+      <p>Fusion has been achieved on Earth, but only in facilities that are massive and heavily staffed, which does not work for a spacecraft.</p>
+    </div>
+
+    <div class="pair">
+      <figure><img src="assets/iter.jpg" alt="Inside the ITER fusion reactor under construction"><figcaption>ITER fusion reactor, France.</figcaption></figure>
+      <figure><img src="assets/tokamak.jpg" alt="Interior of a tokamak with a technician for scale"><figcaption>Tokamak interior, General Atomics.</figcaption></figure>
+    </div>
+
+    <div class="grid g2">
+      <div class="card"><h3>Possible fix: heat</h3><p>A tokamak uses magnetic fields to shape plasma into a torus and reach the needed temperatures. Today's machines are huge, so one path is a scaled-down version. A simulation could test whether shrinking it hurts the heat generated.</p></div>
+      <div class="card"><h3>Possible fix: pressure</h3><p>MIT Plasma and Fusion Center researchers showed that strong magnetic fields can lower the pressure requirement to roughly 10 times atmospheric pressure. This is the magnetic confinement approach, using magnetic pressure <span class="eq">P = B²/2μ₀</span>.</p></div>
+    </div>
+
+    <div class="card">
+      <h3>Conclusion</h3>
+      <ul>
+        <li>Fusion is an extremely efficient fuel source, releasing very large energy from joining two nuclei.</li>
+        <li>It needs extreme temperature and pressure, and we can reach it on Earth but not yet inside a spacecraft.</li>
+        <li>A smaller tokamak could supply the heat, and strong magnetic fields can sharply cut the pressure needed.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Sources</h3>
+      <ul class="src">
+        <li><a href="https://www.psfc.mit.edu/research/topics/high-field-pathway-fusion-power">MIT PSFC: high-field pathway to fusion power</a></li>
+        <li><a href="https://iopscience.iop.org/article/10.3847/2515-5172/aadcf4">IOPscience article (RNAAS)</a></li>
+        <li><a href="https://www1.grc.nasa.gov/research-and-engineering/chemical-propulsion-systems/">NASA Glenn: chemical propulsion systems</a></li>
+        <li><a href="https://www.nasa.gov/general/the-fusion-driven-rocket-nuclear-propulsion-through-direct-conversion-of-fusion-energy/">NASA: the fusion driven rocket</a></li>
+        <li><a href="https://ntrs.nasa.gov/api/citations/19710015212/downloads/19710015212.pdf">NASA Technical Reports Server (1971)</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section role="tabpanel" id="p-music" aria-labelledby="t-music" hidden>
+  <h2>Music</h2>
+  <p class="lede">Press play below.</p>
+  <iframe class="player" id="yt" title="Music video on YouTube" src="https://www.youtube-nocookie.com/embed/pZMkKNXLwQ4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <p style="margin-top:1.4rem"><a class="btn" href="https://www.youtube.com/watch?v=pZMkKNXLwQ4" target="_blank" rel="noopener">Open on YouTube</a></p>
+</section>
+
+<!-- ANIMATION -->
+<section role="tabpanel" id="p-animation" aria-labelledby="t-animation" hidden>
+  <div class="stack">
+    <div>
+      <h2>Animation</h2>
+      <p class="lede">Digital illustrations and frame-by-frame animation tests, from rough sketches to finished scenes.</p>
+    </div>
+    <div>
+      <h3>Moving clips</h3>
+      <div class="grid g2 clips" style="margin-top:1rem">
+        <div><video controls preload="metadata" playsinline src="assets/clip1.mp4"></video><p>Horned figure</p></div>
+        <div><video controls preload="metadata" playsinline src="assets/clip2.mp4"></video><p>Ink burst</p></div>
+        <div><video controls preload="metadata" playsinline src="assets/clip3.mp4"></video><p>Fighter</p></div>
+        <div><video controls preload="metadata" playsinline src="assets/clip4.mp4"></video><p>Round-head character</p></div>
+      </div>
+    </div>
+    <div>
+      <h3>Illustrations</h3>
+      <div class="art" style="margin-top:1rem">
+        <button data-i="0"><img src="assets/art1.jpg" alt="Line drawing of a crowned figure lounging on a throne"></button>
+        <button data-i="1"><img src="assets/art2.jpg" alt="Boy in a dark school uniform standing among floating rocks"></button>
+        <button data-i="2"><img src="assets/art3.jpg" alt="Rough sketch of a spiky-haired character with a sword"></button>
+        <button data-i="3"><img src="assets/art4.jpg" alt="Mechanical dinosaur with a brown body and metal parts"></button>
+        <button data-i="4"><img src="assets/art5.jpg" alt="Plague doctor with a staff above a line sketch of bird characters"></button>
+        <button data-i="5"><img src="assets/art6.jpg" alt="Character swinging a large shield with yellow smoke trailing"></button>
+        <button data-i="6"><img src="assets/art7.jpg" alt="Crowned skeleton warrior with a scythe in a moonlit graveyard"></button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Cyrus Xue · Physics, research, music and animation</div></footer>
+
+<dialog id="lb" aria-label="Enlarged illustration"><button type="button" id="lbx">Close</button><img id="lbi" alt=""></dialog>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  function show(id,focus){
+    tabs.forEach(function(t){
+      var on=t.id==='t-'+id;
+      t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden=!on;
+      if(on&&focus)t.focus();
+    });
+    document.querySelectorAll('video').forEach(function(v){v.pause()});
+    if(id!=='music'){var f=document.getElementById('yt');var s=f.src;f.src=s}
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){var id=t.id.slice(2);show(id);history.replaceState(null,'','#'+id)});
+    t.addEventListener('keydown',function(e){
+      var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:e.key==='Home'?0:e.key==='End'?tabs.length-1:null;
+      if(n===null)return;e.preventDefault();n=(n+tabs.length)%tabs.length;
+      show(tabs[n].id.slice(2),true);
+    });
+  });
+  var h=location.hash.slice(1);
+  if(h&&document.getElementById('t-'+h))show(h);
+
+  var cf=document.getElementById('campframe');
+  document.querySelectorAll('.daybtn').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.daybtn').forEach(function(o){o.setAttribute('aria-pressed',o===b)});
+      cf.src=b.dataset.pdf+'#toolbar=1&navpanes=0';
+      document.getElementById('camppdf').href=b.dataset.pdf;
+      document.getElementById('camppptx').href=b.dataset.pptx;
+    });
+  });
+  var lb=document.getElementById('lb'),lbi=document.getElementById('lbi');
+  document.querySelectorAll('.art button').forEach(function(b){
+    b.addEventListener('click',function(){var im=b.querySelector('img');lbi.src=im.src;lbi.alt=im.alt;lb.showModal()});
+  });
+  document.getElementById('lbx').addEventListener('click',function(){lb.close()});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+})();
+</script>
+</body>
+</html>

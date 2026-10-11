@@ -1,4 +1,4 @@
-# Cyrus Xue site: Cloudflare Pages deployment
+# Cyrus Xue site: Cloudflare deployment
 
 A static site: no build step, no dependencies. Everything to publish is in `public/`.
 
@@ -8,10 +8,15 @@ public/
   _headers        Cloudflare cache and security headers
   assets/         images and animation clips
   docs/           PDFs (embedded) plus original .pptx / .docx (download links)
-wrangler.toml     Pages project settings
+wrangler.toml     Cloudflare deploy settings (serves ./public as static assets)
 ```
 
-## Option A: drag and drop (easiest)
+## If you connect GitHub and the build runs `npx wrangler deploy`
+`wrangler.toml` already points at `public/`, so no build command is needed.
+The `name` in `wrangler.toml` must match the project name shown in Cloudflare.
+If your repository has this folder nested inside another, change `directory` to include the folder name.
+
+## Option A: drag and drop (Pages)
 1. Cloudflare dashboard > Workers & Pages > Create > Pages > Upload assets.
 2. Name the project, then drag in the **`public`** folder (or a zip of its contents).
 3. Click Deploy. You get a `*.pages.dev` address.
@@ -20,7 +25,7 @@ wrangler.toml     Pages project settings
 ```
 npm install -g wrangler
 wrangler login
-wrangler pages deploy public --project-name cyrus-xue-site
+wrangler deploy
 ```
 
 ## Option C: Git

@@ -1,4 +1,5 @@
-# Cloudflare Pages configuration
+# Cloudflare Workers static assets configuration.
+# Works with the default "npx wrangler deploy" command used by Workers Builds.
 name = "cyrus-xue-site"
 compatibility_date = "2026-10-01"
 

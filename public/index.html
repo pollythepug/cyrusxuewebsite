@@ -142,7 +142,7 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
 .center{text-align:center}.center .lede{margin-left:auto;margin-right:auto}
 .center .player{max-width:56rem;margin:0 auto;display:block}
 .wpvid{width:100%;background:#000;border:1.5px solid var(--ink);box-shadow:5px 5px 0 var(--shadow)}
-</style>
+.campvid .player{max-width:48rem;display:block}.sub2{margin-top:2rem}.sub2 .subtab{font-size:.78rem;padding:.7rem 1rem}#camp-notes .day{border-top:0;padding-top:0}</style>
 </head>
 <body>
 <header>
@@ -183,44 +183,51 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
 
   <section class="sec subpanel" role="tabpanel" id="shs-club" aria-labelledby="s-shs-club" hidden>
     <h2 id="h-club">SHS Physics Club</h2>
-    <h3 style="margin-top:1.6rem">Club events</h3>
+    <div class="subnav sub2" data-inner role="tablist" aria-label="SHS Physics Club sections">
+      <button type="button" role="tab" class="subtab" id="s-shs-events" data-sub="shs-events" aria-selected="true">Club events</button>
+      <button type="button" role="tab" class="subtab" id="s-shs-hw" data-sub="shs-hw" aria-selected="false" tabindex="-1">Homework</button>
+    </div>
+    <div class="subpanel" role="tabpanel" id="shs-events" aria-labelledby="s-shs-events">
     <p class="lede" style="margin:.5rem 0 1.4rem">Photos from SHS Physics Club events. Click a photo to enlarge it.</p>
     <div class="art gal">
       <button data-cap="Physics Club event, photo 3"><img src="assets/club3.jpg" alt="Students standing and chatting around lab tables during an event" loading="lazy"></button>
       <button data-cap="Physics Club event, photo 1"><img src="assets/club1.jpg" alt="Students seated in the physics classroom watching a presentation" loading="lazy"></button>
       <button data-cap="Physics Club event, photo 2"><img src="assets/club2.jpg" alt="Students eating and working at lab tables in the physics classroom" loading="lazy"></button>
     </div>
-    <h3 style="margin-top:3rem">Homework</h3>
+    </div>
+    <div class="subpanel" role="tabpanel" id="shs-hw" aria-labelledby="s-shs-hw" hidden>
     <p class="lede" style="margin:.5rem 0 1.4rem">Saratoga High School Physics Club homework: Day 3, Dynamics part 2. Seven multiple-choice questions on elevators, friction, springs and pulleys.</p>
     <iframe class="embed portrait" title="Day 3 Dynamics homework (PDF)" src="docs/Day3-Dynamics-HW.pdf#toolbar=1&navpanes=0"></iframe>
     <p class="links"><a class="btn" href="docs/Day3-Dynamics-HW.pdf" target="_blank" rel="noopener">Open PDF</a> <a class="btn alt" href="docs/Day3-Dynamics-HW.docx" download>Download Word file</a></p>
+  </div>
   </section>
 
   <section class="sec subpanel" role="tabpanel" id="summer-camp" aria-labelledby="s-summer-camp" hidden>
     <h2 id="h-camp">Physics summer camp</h2>
     <p class="lede">SHS Physics Club Summer Camp 2026, a virtual Physics + AP Physics 1 camp. Pick a day to read its slides.</p>
     <div class="seg" role="group" aria-label="Choose a camp day">
-      <button type="button" class="daybtn" aria-pressed="true" data-pdf="docs/Day3-Slides.pdf" data-pptx="docs/Day3-Slides.pptx">Day 3: Dynamics pt. 2</button>
-      <button type="button" class="daybtn" aria-pressed="false" data-pdf="docs/Day4-Slides.pdf" data-pptx="docs/Day4-Slides.pptx">Day 4: Circular motion and gravitation</button>
-      <button type="button" class="daybtn" aria-pressed="false" data-pdf="docs/Day13-Slides.pdf" data-pptx="docs/Day13-Slides.pptx">Day 13: Pressure, density, buoyancy</button>
+      <button type="button" class="daybtn" aria-pressed="true" data-day="4" data-pdf="docs/Day4-Slides.pdf" data-pptx="docs/Day4-Slides.pptx" data-vid="WpBer1RBnBQ" data-full="https://youtu.be/gGUc1Sdq6tk">Day 4: Circular motion and gravitation</button>
+      <button type="button" class="daybtn" aria-pressed="false" data-day="13" data-pdf="docs/Day13-Slides.pdf" data-pptx="docs/Day13-Slides.pptx" data-vid="EJbz-tinxgo" data-full="https://youtu.be/MQRtLbqltWo">Day 13: Pressure, density, buoyancy</button>
+      <button type="button" class="daybtn" aria-pressed="false" data-day="15" data-pdf="docs/Day15-Slides.pdf" data-pptx="docs/Day15-Slides.pptx">Day 15: Dynamics pt. 2</button>
     </div>
-    <iframe class="embed slides" id="campframe" title="Summer camp slides (PDF)" src="docs/Day3-Slides.pdf#toolbar=1&navpanes=0"></iframe>
-    <p class="links"><a class="btn" id="camppdf" href="docs/Day3-Slides.pdf" target="_blank" rel="noopener">Open PDF</a> <a class="btn alt" id="camppptx" href="docs/Day3-Slides.pptx" download>Download PowerPoint</a></p>
+    
+    <div class="campvid" id="campvidbox" hidden>
+      <h3 style="margin-top:1.8rem">Lecture video preview</h3>
+      <p class="lede" style="margin:.5rem 0 1.4rem">A two-minute preview of this day's lecture. The full lecture is on YouTube.</p>
+      <iframe class="player" id="campvid" title="Lecture video preview on YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <p class="links"><a class="btn" id="campfull" href="https://youtu.be/MQRtLbqltWo" target="_blank" rel="noopener">Watch the full lecture on YouTube</a></p>
+    </div>
 
-    <h3 style="margin-top:3rem">Lesson notes</h3>
-<article class="day">
-    <div><span class="tag">Day 3</span><h3>Dynamics, part 2</h3><p>Elevators, friction, springs and pulleys.</p></div>
-    <div>
-      <div class="grid g3">
-        <div class="card"><h3>Elevators</h3><ul><li>Net force and acceleration point the same way</li><li>Normal force vs. gravity</li><li>Free fall and "weightlessness"</li></ul></div>
-        <div class="card"><h3>Friction</h3><ul><li>Kinetic: <span class="eq">F = μₖN</span></li><li>Static: <span class="eq">F ≤ μₛN</span></li><li>Why pulling beats pushing</li></ul></div>
-        <div class="card"><h3>Springs and pulleys</h3><ul><li>Restoring force <span class="eq">F = −kx</span></li><li>Tension and Atwood machines</li><li>What a fixed pulley does</li></ul></div>
-      </div>
-      <details><summary>A 5 kg box rides in an elevator moving down and slowing at 5 m/s². What normal force does it feel? (g = 10 m/s²)</summary><p class="ans">75 N. Moving down while slowing means the acceleration points up: N − mg = ma, so N = 5(10 + 5) = 75 N.</p></details>
-      <details><summary>A 15 kg crate sits on a truck bed (μₛ = 0.7). The truck accelerates at 7 m/s². Does the crate slide off?</summary><p class="ans">Yes. Maximum static friction is 0.7 × 15 × 9.8 = 102.9 N, but the crate needs 15 × 7 = 105 N to keep up.</p></details>
+    <div class="subnav sub2" data-inner role="tablist" aria-label="Camp day sections">
+      <button type="button" role="tab" class="subtab" id="s-camp-slides" data-sub="camp-slides" aria-selected="true">Slides</button>
+      <button type="button" role="tab" class="subtab" id="s-camp-notes" data-sub="camp-notes" aria-selected="false" tabindex="-1">Lesson notes</button>
     </div>
-  </article>
-<article class="day">
+    <div class="subpanel" role="tabpanel" id="camp-slides" aria-labelledby="s-camp-slides">
+    <iframe class="embed slides" id="campframe" title="Summer camp slides (PDF)" src="docs/Day4-Slides.pdf#toolbar=1&navpanes=0"></iframe>
+    <p class="links"><a class="btn" id="camppdf" href="docs/Day4-Slides.pdf" target="_blank" rel="noopener">Open PDF</a> <a class="btn alt" id="camppptx" href="docs/Day4-Slides.pptx" download>Download PowerPoint</a></p>
+    </div>
+    <div class="subpanel" role="tabpanel" id="camp-notes" aria-labelledby="s-camp-notes" hidden>
+<article class="day" data-day="4">
     <div><span class="tag">Day 4</span><h3>Circular motion and gravitation</h3><p>Centripetal force, banked turns and orbits.</p></div>
     <div>
       <div class="grid g3">
@@ -232,7 +239,8 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
       <details><summary>A 2 kg block circles on a table at radius 0.8 m, held by a string to a 0.5 kg block hanging below. Find the tension, speed and period.</summary><p class="ans">Tension 4.9 N (it holds up the hanging block). Speed 1.4 m/s. Period 3.59 s. If the string is cut, the table block flies off in a straight tangent line and the hanging block falls freely.</p></details>
     </div>
   </article>
-<article class="day">
+
+  <article class="day" data-day="13" hidden>
     <div><span class="tag">Day 13</span><h3>Pressure, density, buoyancy</h3><p>From a block's mass to why ships float.</p></div>
     <div>
       <div class="grid g3">
@@ -244,6 +252,20 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
       <details><summary>An ice cube floats in a full glass of water. When it melts completely, what happens to the water level?</summary><p class="ans">Try it before you open the slides. Options: it rises, it falls, it stays the same, or the glass overflows.</p></details>
     </div>
   </article>
+  <article class="day" hidden data-day="15">
+    <div><span class="tag">Day 15</span><h3>Dynamics, part 2</h3><p>Elevators, friction, springs and pulleys.</p></div>
+    <div>
+      <div class="grid g3">
+        <div class="card"><h3>Elevators</h3><ul><li>Net force and acceleration point the same way</li><li>Normal force vs. gravity</li><li>Free fall and "weightlessness"</li></ul></div>
+        <div class="card"><h3>Friction</h3><ul><li>Kinetic: <span class="eq">F = μₖN</span></li><li>Static: <span class="eq">F ≤ μₛN</span></li><li>Why pulling beats pushing</li></ul></div>
+        <div class="card"><h3>Springs and pulleys</h3><ul><li>Restoring force <span class="eq">F = −kx</span></li><li>Tension and Atwood machines</li><li>What a fixed pulley does</li></ul></div>
+      </div>
+      <details><summary>A 5 kg box rides in an elevator moving down and slowing at 5 m/s². What normal force does it feel? (g = 10 m/s²)</summary><p class="ans">75 N. Moving down while slowing means the acceleration points up: N − mg = ma, so N = 5(10 + 5) = 75 N.</p></details>
+      <details><summary>A 15 kg crate sits on a truck bed (μₛ = 0.7). The truck accelerates at 7 m/s². Does the crate slide off?</summary><p class="ans">Yes. Maximum static friction is 0.7 × 15 × 9.8 = 102.9 N, but the crate needs 15 × 7 = 105 N to keep up.</p></details>
+    </div>
+  </article>
+
+  </div>
   </section>
   </div>
 </section>
@@ -436,7 +458,7 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
       if(on&&focus)t.focus();
     });
     document.querySelectorAll('video').forEach(function(v){v.pause()});
-    if(id!=='music'){var f=document.getElementById('yt');var s=f.src;f.src=s}
+    if(id!=='music'){var f=document.getElementById('yt');var s=f.src;f.src=s}stopCamp();
   }
   tabs.forEach(function(t,i){
     t.addEventListener('click',function(){var id=t.id.slice(2);show(id);history.replaceState(null,'','#'+id)});
@@ -450,24 +472,30 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
   if(h&&document.getElementById('t-'+h))show(h);
 
   var cf=document.getElementById('campframe');
-  document.querySelectorAll('.daybtn').forEach(function(b){
+  document.querySelectorAll('#summer-camp .daybtn').forEach(function(b){
     b.addEventListener('click',function(){
-      document.querySelectorAll('.daybtn').forEach(function(o){o.setAttribute('aria-pressed',o===b)});
+      document.querySelectorAll('#summer-camp .daybtn').forEach(function(o){o.setAttribute('aria-pressed',o===b)});
       cf.src=b.dataset.pdf+'#toolbar=1&navpanes=0';
       document.getElementById('camppdf').href=b.dataset.pdf;
       document.getElementById('camppptx').href=b.dataset.pptx;
+      document.querySelectorAll('#camp-notes .day').forEach(function(a){a.hidden=a.dataset.day!==b.dataset.day});
+      var box=document.getElementById('campvidbox'),cv=document.getElementById('campvid');
+      if(b.dataset.vid){cv.src='https://www.youtube.com/embed/'+b.dataset.vid+'?rel=0&playsinline=1'+(/^https?:$/.test(location.protocol)?'&origin='+encodeURIComponent(location.origin):'');document.getElementById('campfull').href=b.dataset.full;box.hidden=false}
+      else{cv.removeAttribute('src');box.hidden=true}
     });
   });
   (function(){var f=document.getElementById('yt');if(/^https?:$/.test(location.protocol))f.src='https://www.youtube.com/embed/fRWpGbkktSo?rel=0&playsinline=1&origin='+encodeURIComponent(location.origin)})();
-  function stopMedia(keepYT){document.querySelectorAll('video').forEach(function(v){v.pause()});if(!keepYT){var f=document.getElementById('yt');f.src=f.src}}
+  function stopCamp(){var c=document.getElementById('campvid');if(c.getAttribute('src'))c.src=c.src}
+  function stopMedia(keepYT){stopCamp();document.querySelectorAll('video').forEach(function(v){v.pause()});if(!keepYT){var f=document.getElementById('yt');f.src=f.src}}
   document.querySelectorAll('.subnav').forEach(function(nav){
     var st=[].slice.call(nav.querySelectorAll('.subtab'));
-    function pick(s,focus){st.forEach(function(x){var on=x===s;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.dataset.sub).hidden=!on});stopMedia(s.dataset.sub==='cello');if(focus)s.focus()}
+    function pick(s,focus){st.forEach(function(x){var on=x===s;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.dataset.sub).hidden=!on});if(!nav.hasAttribute('data-inner'))stopMedia(s.dataset.sub==='cello');if(focus)s.focus()}
     st.forEach(function(s,i){
       s.addEventListener('click',function(){pick(s)});
       s.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;if(n===null)return;e.preventDefault();pick(st[(n+st.length)%st.length],true)});
     });
   });
+  document.querySelector('#summer-camp .daybtn').click();
   var arts=[].slice.call(document.querySelectorAll('.art button')),lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbcap=document.getElementById('lbcap'),cur=[],ix=0;
   function openAt(i){ix=(i+cur.length)%cur.length;var b=cur[ix],im=b.querySelector('img');lbi.src=im.src;lbi.alt=im.alt;lbcap.textContent=b.dataset.cap+(cur.length>1?' ('+(ix+1)+' of '+cur.length+')':'')}
   arts.forEach(function(b){b.addEventListener('click',function(){cur=[].slice.call(b.parentElement.querySelectorAll('button')).filter(function(x){return !x.hidden});openAt(cur.indexOf(b));document.getElementById('lbp').hidden=document.getElementById('lbn').hidden=cur.length<2;lb.showModal()})});

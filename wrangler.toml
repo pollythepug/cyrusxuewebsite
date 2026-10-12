@@ -6,4 +6,6 @@ compatibility_date = "2026-10-01"
 [assets]
 directory = "./public"
 
+# Needed by Cloudflare Worker Previews (branch preview builds).
+# Empty because previews use the same settings as production.
 [previews]

@@ -1,6 +1,11 @@
-# Cloudflare Pages configuration
+# Cloudflare Workers static assets configuration.
+# Works with the default "npx wrangler deploy" command used by Workers Builds.
 name = "cyrus-xue-site"
 compatibility_date = "2026-10-01"
 
 [assets]
 directory = "./public"
+
+# Needed by Cloudflare Worker Previews (branch preview builds).
+# Empty because previews use the same settings as production.
+[previews]

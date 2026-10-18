@@ -142,7 +142,7 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
 .center{text-align:center}.center .lede{margin-left:auto;margin-right:auto}
 .center .player{max-width:56rem;margin:0 auto;display:block}
 .wpvid{width:100%;background:#000;border:1.5px solid var(--ink);box-shadow:5px 5px 0 var(--shadow)}
-.campvid .player{max-width:48rem;display:block}.sub2{margin-top:2rem}.sub2 .subtab{font-size:.78rem;padding:.7rem 1rem}#camp-notes .day{border-top:0;padding-top:0}[hidden]{display:none!important}</style>
+.campvid .player{max-width:48rem;display:block}.sub2{margin-top:2rem}.sub2 .subtab{font-size:.78rem;padding:.7rem 1rem}#camp-notes .day{border-top:0;padding-top:0}[hidden]{display:none!important}.vblock{margin-top:2.6rem}.vblock h3{margin-bottom:1rem}.center .vblock .player{margin:0 auto}</style>
 </head>
 <body>
 <header>
@@ -272,6 +272,11 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
 
 <!-- RESEARCH -->
 <section role="tabpanel" id="p-research" aria-labelledby="t-research" hidden>
+  <div class="subnav" role="tablist" aria-label="Research sections">
+    <button type="button" role="tab" class="subtab" id="s-ccir" data-sub="ccir" aria-selected="true">CCIR</button>
+    <button type="button" role="tab" class="subtab" id="s-asdrp" data-sub="asdrp" aria-selected="false" tabindex="-1">ASDRP</button>
+  </div>
+  <div class="subpanel" role="tabpanel" id="ccir" aria-labelledby="s-ccir">
   <div class="stack">
     <div>
       <h2>Nuclear fusion propulsion</h2>
@@ -353,6 +358,13 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
       </ul>
     </div>
   </div>
+</div>
+  <div class="subpanel" role="tabpanel" id="asdrp" aria-labelledby="s-asdrp" hidden>
+    <h2>A Time-Regulated Neural Operator Framework for Chaotic Biomedical System Forecasting</h2>
+    <p class="lede">ASDRP research paper. Read it below, or open the PDF in a new tab.</p>
+    <iframe class="embed portrait" title="A Time-Regulated Neural Operator Framework for Chaotic Biomedical System Forecasting (PDF)" src="docs/ASDRP-Time-Regulated-Neural-Operator.pdf#toolbar=1&navpanes=0"></iframe>
+    <p class="links"><a class="btn" href="docs/ASDRP-Time-Regulated-Neural-Operator.pdf" target="_blank" rel="noopener">Open PDF</a> <a class="btn alt" href="docs/ASDRP-Time-Regulated-Neural-Operator.pdf" download>Download PDF</a></p>
+  </div>
 </section>
 
 <!-- MUSIC -->
@@ -361,6 +373,7 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
   <p class="lede">Cello, orchestra tours and winter percussion.</p>
   <div class="subnav" role="tablist" aria-label="Music sections">
     <button type="button" role="tab" class="subtab" id="s-cello" data-sub="cello" aria-selected="true">Cello performance</button>
+    <button type="button" role="tab" class="subtab" id="s-graduation" data-sub="graduation" aria-selected="false" tabindex="-1">Graduation performance</button>
     <button type="button" role="tab" class="subtab" id="s-japan" data-sub="japan" aria-selected="false" tabindex="-1">Japan trip</button>
     <button type="button" role="tab" class="subtab" id="s-percussion" data-sub="percussion" aria-selected="false" tabindex="-1">Winter percussion</button>
   </div>
@@ -370,6 +383,20 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
     <p class="lede">Press play below.</p>
     <iframe class="player" id="yt" title="Cyrus' cello performance on YouTube" src="https://www.youtube.com/embed/fRWpGbkktSo?rel=0&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     <p class="links" style="justify-content:center"><a class="btn" href="https://www.youtube.com/watch?v=fRWpGbkktSo" target="_blank" rel="noopener">Open on YouTube</a></p>
+  </section>
+  <section class="sec subpanel center" role="tabpanel" id="graduation" aria-labelledby="s-graduation" hidden>
+    <h2>Graduation performance</h2>
+    <p class="lede">Two performances from graduation.</p>
+    <div class="vblock">
+      <h3>Performance 1</h3>
+      <iframe class="player gradyt" data-id="KgTQ-Vez0a4" title="Graduation performance 1 on YouTube" src="https://www.youtube.com/embed/KgTQ-Vez0a4?rel=0&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <p class="links" style="justify-content:center"><a class="btn" href="https://youtu.be/KgTQ-Vez0a4" target="_blank" rel="noopener">Open on YouTube</a></p>
+    </div>
+    <div class="vblock">
+      <h3>Performance 2</h3>
+      <iframe class="player gradyt" data-id="kGSexy8m2E8" title="Graduation performance 2 on YouTube" src="https://www.youtube.com/embed/kGSexy8m2E8?rel=0&playsinline=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <p class="links" style="justify-content:center"><a class="btn" href="https://youtu.be/kGSexy8m2E8" target="_blank" rel="noopener">Open on YouTube</a></p>
+    </div>
   </section>
   <section class="sec subpanel" role="tabpanel" id="japan" aria-labelledby="s-japan" hidden>
     <h2>Japan trip</h2>
@@ -458,7 +485,7 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
       if(on&&focus)t.focus();
     });
     document.querySelectorAll('video').forEach(function(v){v.pause()});
-    if(id!=='music'){var f=document.getElementById('yt');var s=f.src;f.src=s}stopCamp();
+    if(id!=='music'){resetYT('#yt');resetYT('.gradyt')}stopCamp();
   }
   tabs.forEach(function(t,i){
     t.addEventListener('click',function(){var id=t.id.slice(2);show(id);history.replaceState(null,'','#'+id)});
@@ -485,11 +512,13 @@ dialog .lbn{top:50%;transform:translateY(-50%);font:600 1.8rem/1 var(--body);pad
     });
   });
   (function(){var f=document.getElementById('yt');if(/^https?:$/.test(location.protocol))f.src='https://www.youtube.com/embed/fRWpGbkktSo?rel=0&playsinline=1&origin='+encodeURIComponent(location.origin)})();
+  document.querySelectorAll('.gradyt').forEach(function(f){if(/^https?:$/.test(location.protocol))f.src='https://www.youtube.com/embed/'+f.dataset.id+'?rel=0&playsinline=1&origin='+encodeURIComponent(location.origin)});
   function stopCamp(){var c=document.getElementById('campvid');if(c.getAttribute('src'))c.src=c.src}
-  function stopMedia(keepYT){stopCamp();document.querySelectorAll('video').forEach(function(v){v.pause()});if(!keepYT){var f=document.getElementById('yt');f.src=f.src}}
+  function resetYT(sel){document.querySelectorAll(sel).forEach(function(f){if(f.getAttribute('src'))f.src=f.src})}
+  function stopMedia(sub){stopCamp();if(sub!=='graduation')resetYT('.gradyt');document.querySelectorAll('video').forEach(function(v){v.pause()});if(sub!=='cello')resetYT('#yt')}
   document.querySelectorAll('.subnav').forEach(function(nav){
     var st=[].slice.call(nav.querySelectorAll('.subtab'));
-    function pick(s,focus){st.forEach(function(x){var on=x===s;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.dataset.sub).hidden=!on});if(!nav.hasAttribute('data-inner'))stopMedia(s.dataset.sub==='cello');if(focus)s.focus()}
+    function pick(s,focus){st.forEach(function(x){var on=x===s;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.dataset.sub).hidden=!on});if(!nav.hasAttribute('data-inner'))stopMedia(s.dataset.sub);if(focus)s.focus()}
     st.forEach(function(s,i){
       s.addEventListener('click',function(){pick(s)});
       s.addEventListener('keydown',function(e){var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:null;if(n===null)return;e.preventDefault();pick(st[(n+st.length)%st.length],true)});
